@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ─────────────────────────────────────────────────────────
+   Design tokens — Assenta
+   Estética: salão de festas brasileiro, madeira nobre, luz quente
+   ───────────────────────────────────────────────────────── */
+@theme {
+  /* Paleta principal */
+  --color-imbuia: #2a1d14;
+  --color-imbuia-soft: #4a3829;
+  --color-imbuia-mute: #7a6a5a;
+
+  --color-ambar: #b86a1c;
+  --color-ambar-soft: #d89150;
+  --color-ambar-pale: #e8c49a;
+
+  --color-linho: #f4ecdd;
+  --color-linho-deep: #e8dcc4;
+  --color-linho-card: #fbf6ea;
+
+  /* Cor exclusiva de "Cancelado" (não conta na paleta principal) */
+  --color-tijolo: #9a2a1f;
+
+  /* Tipografia */
+  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Source Code Pro", monospace;
+
+  /* Tamanho-base 16px (acessibilidade) */
+  --text-base: 1rem;
+
+  /* Border radius modesto, fits com estética material */
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 10px;
+
+  /* Sombra com tom Imbúia (não cinza neutro) */
+  --shadow-card: 0 1px 0 rgba(42, 29, 20, 0.04),
+    0 8px 24px -16px rgba(42, 29, 20, 0.18);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────────────────── */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-linho);
+  color: var(--color-imbuia);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Textura sutil de linho — substitui branco puro */
+  background-image: radial-gradient(rgba(42, 29, 20, 0.025) 1px, transparent 1px),
+    radial-gradient(rgba(42, 29, 20, 0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 1px;
+  background-attachment: fixed;
+}
+
+/* Foco acessível em qualquer elemento focável */
+*:focus-visible {
+  outline: 2px solid var(--color-ambar);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Variantes numéricas tabulares por padrão em campos relevantes */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
